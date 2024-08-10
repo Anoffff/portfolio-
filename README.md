@@ -32,5 +32,10 @@ This API is designed for a personal portfolio website, allowing you to manage pr
 - SQLAlchemy
 - SQLite (or any other database supported by SQLAlchemy)
 
+### Installation
 
-   
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Anoffff/portfolio-.git
+   cd portfolio-api
