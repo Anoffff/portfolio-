@@ -1,16 +1,18 @@
 from fastapi import APIRouter, Depends, status, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
+from config.oauth2 import get_current_user
 from repositories import contact_info
 import schemas
 from database import get_db  
 
 router = APIRouter(
     prefix="/contactinfo",
-    tags=["ContactInfo"]
+    tags=["ContactInfo"],
+    dependencies=[Depends(get_current_user)]
 )
 
-@router.post("/", response_model=schemas.ContactInfo, status_code=status.HTTP_201_CREATED)
+@router.post("/", response_model=schemas.ContactInfo,status_code=status.HTTP_201_CREATED)
 def create_contactinfo(request: schemas.ContactInfo, db: Session = Depends(get_db)):
     return contact_info.create_contactinfo(request, db)
 
