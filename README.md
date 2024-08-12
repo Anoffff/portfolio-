@@ -38,4 +38,5 @@ This API is designed for a personal portfolio website, allowing you to manage pr
 
    ```bash
    git clone https://github.com/Anoffff/portfolio-.git
-   cd portfolio-api
+   cd app
+   
